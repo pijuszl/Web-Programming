@@ -1,0 +1,169 @@
+<?xml version="1.0"?>
+
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns="https://flight-schedule.com/schedule"
+    xmlns:c="https://flight-schedule.com/crew"
+    targetNamespace="https://flight-schedule.com/schedule"
+    elementFormDefault="qualified">
+
+    <xs:import namespace="https://flight-schedule.com/crew" schemaLocation="crew.xsd" />
+
+    <xs:element name="flight_schedule">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="flight" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+        <xs:key name="airlines_key">
+            <xs:selector xpath="flight/airlines" />
+            <xs:field xpath="@id" />
+        </xs:key>
+        <xs:key name="crew_key">
+            <xs:selector xpath="flight/c:crew" />
+            <xs:field xpath="@id" />
+        </xs:key>
+        <xs:keyref name="crew_key_ref" refer="airlines_key">
+            <xs:selector xpath="flight/c:crew" />
+            <xs:field xpath="@id" />
+        </xs:keyref>
+    </xs:element>
+
+    <xs:element name="flight">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="airlines" />
+                <xs:element ref="departure_airport" />
+                <xs:element ref="arrival_airport" />
+                <xs:element ref="flight_duration" />
+                <xs:element name="departure_date" type="xs:date" />
+                <xs:element ref="aircraft" />
+                <xs:element ref="c:crew" />
+                <xs:element ref="passengers" />
+                <xs:element ref="bought_seats" />
+            </xs:sequence>
+            <xs:attribute name="id" type="flight_id" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="airlines">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="airlines_type">
+                    <xs:attribute name="id" type="airlines_id" use="required" />
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:simpleType name="airlines_type">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Turkish Airlines" />
+            <xs:enumeration value="GetJet Airlines" />
+            <xs:enumeration value="British Airways" />
+            <xs:enumeration value="Finnair" />
+            <xs:enumeration value="Ryanair" />
+            <xs:enumeration value="Avion Express" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:element name="departure_airport">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="airport" type="airport_type" />
+                <xs:element name="departure_time" type="time_type" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="arrival_airport">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="airport" type="airport_type" />
+                <xs:element name="arrival_time" type="time_type" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:simpleType name="airport_type">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]{3}" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="time_type">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:element name="flight_duration">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:decimal">
+                    <xs:attribute name="time" type="xs:string" use="required" />
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="aircraft">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="model" type="xs:string" />
+                <xs:element name="capacity" type="xs:integer" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="passengers">
+        <xs:complexType>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="passenger" type="passenger_type" />
+                <xs:element name="top_passenger" type="first_class_passenger_type" />
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="passenger_type">
+        <xs:sequence>
+            <xs:element name="first_name" type="xs:string" />
+            <xs:element name="last_name" type="xs:string" />
+            <xs:element name="age" type="xs:int" />
+            <xs:element name="passport_number" type="xs:string" />
+            <xs:element name="food_included" type="xs:boolean" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="first_class_passenger_type">
+        <xs:complexContent>
+            <xs:restriction base="passenger_type">
+                <xs:sequence>
+                    <xs:element name="first_name" type="xs:string" />
+                    <xs:element name="last_name" type="xs:string" />
+                    <xs:element name="age" type="xs:int" />
+                    <xs:element name="passport_number" type="xs:string" />
+                    <xs:element name="food_included" type="xs:boolean" fixed="true" />
+                </xs:sequence>
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:element name="bought_seats">
+        <xs:simpleType>
+            <xs:list itemType="xs:integer" />
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:simpleType name="flight_id">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z][A-Z]\d{3}" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="airlines_id">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]\d{4}" />
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

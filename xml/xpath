@@ -1,0 +1,52 @@
+1.
+
+    /flight_schedule/flight/c:crew/
+
+    ancestor -           /flight_schedule/flight/c:crew/ancestor::flight
+    descendant -         /flight_schedule/flight/c:crew/descendant::c:first_name
+    following-sibling -  /flight_schedule/flight/c:crew/following-sibling::passengers
+    preceding-sibling -  /flight_schedule/flight/c:crew/preceding-sibling::aircraft
+    following -          /flight_schedule/flight/c:crew/following::c:crew
+    preceding -          /flight_schedule/flight/c:crew/preceding::c:crew
+    attribute -          /flight_schedule/flight/c:crew/@id
+
+2.
+
+    /flight_schedule/flight[flight_duration > /flight_schedule/flight[2]/flight_duration]/flight_duration
+
+3.
+
+    3.1 count(/flight_schedule/flight/c:crew/c:pilot[c:age > 35])
+    3.2 sum(//c:age[self::* > 35])
+    3.3 
+    <a>
+        <b>2</b>
+        <c>3</c>
+    </a> sum(//*) = 28
+
+5.
+    /descendant::aircraft
+
+    1. Boeing 747 400
+    2. Airbus A320 230
+
+    /descendant::aircraft/preceding::c:pilot[2]
+
+    1. Tomas Laukunas 32 58478OL I am Tomas Laukunas and I am 32
+
+    /descendant::aircraft/preceding::c:pilot[2]/c:description
+
+    1. I am Tomas Laukunas and I am 32
+
+6.
+
+    aibe ir skaicius - //c:pilot[c:age > 30]
+    aibe ir eilute - //c:pilot[c:first_name != 'Tomas']
+    aibe ir logine reiksme - //passport_number[following-sibling::food_included = 'true']
+    dvi aibes - //c:pilot[self::* = /descendant::c:pilot[3]]
+
+7.
+
+    //c:pilot[c:age < /descendant::c:pilot[3]/c:age]
+    //flight[flight_duration > /descendant::flight_duration[2]]
+   `//passport_number[preceding-sibling::age < //c:age]

@@ -1,0 +1,123 @@
+{
+  "flight_schedule": {
+    "flight": [
+      {
+        "airlines": "Avion Express",
+        "departure_airport": {
+          "airport": "VNO",
+          "departure_time": "13:15"
+        },
+        "arrival_airport": {
+          "airport": "LTN",
+          "arrival_time": "15:45"
+        },
+        "flight_duration": 2.5,
+        "departure_date": "2023-10-13",
+        "aircraft": {
+          "model": "Boeing 747",
+          "capacity": 400
+        },
+        "crew": {
+          "pilot": [
+            {
+              "first_name": "Tomas",
+              "last_name": "Laukunas",
+              "age": 32,
+              "license_number": "58478OL",
+              "description": {
+                "#text": "I amand I am",
+                "first_name": "Tomas",
+                "last_name": "Laukunas",
+                "age": 32
+              }
+            },
+            {
+              "first_name": "Lukas",
+              "last_name": "Poliunas",
+              "age": 26,
+              "license_number": "78518MB",
+              "description": {
+                "#text": "I amand I am",
+                "first_name": "Lukas",
+                "last_name": "Poliunas",
+                "age": 26
+              }
+            }
+          ]
+        },
+        "passengers": {
+          "passenger": {
+            "first_name": "Gabriele",
+            "last_name": "Kirlyte",
+            "age": 18,
+            "passport_number": 40507052284,
+            "food_included": false
+          },
+          "top_passenger": {
+            "first_name": "Jonas",
+            "last_name": "Polivonas",
+            "age": 71,
+            "passport_number": 56112267413,
+            "food_included": true
+          }
+        },
+        "bought_seats": "74 29"
+      },
+      {
+        "airlines": "Ryanair",
+        "departure_airport": {
+          "airport": "WAW",
+          "departure_time": "09:48"
+        },
+        "arrival_airport": {
+          "airport": "RIX",
+          "arrival_time": "11:00"
+        },
+        "flight_duration": 1.2,
+        "departure_date": "2023-11-02",
+        "aircraft": {
+          "model": "Airbus A320",
+          "capacity": 230
+        },
+        "crew": {
+          "pilot": [
+            {
+              "first_name": "Valentina",
+              "last_name": "Jankiene",
+              "age": 46,
+              "license_number": "55678HJ",
+              "description": {
+                "#text": "I amand I am",
+                "first_name": "Valentina",
+                "last_name": "Jankiene",
+                "age": 46
+              }
+            },
+            {
+              "first_name": "Karolis",
+              "last_name": "Jukauskas",
+              "age": 52,
+              "license_number": "15488HJ",
+              "description": {
+                "#text": "I amand I am",
+                "first_name": "Karolis",
+                "last_name": "Jukauskas",
+                "age": 52
+              }
+            }
+          ]
+        },
+        "passengers": {
+          "top_passenger": {
+            "first_name": "Ruta",
+            "last_name": "Kirilova",
+            "age": 50,
+            "passport_number": 47311190028,
+            "food_included": true
+          }
+        },
+        "bought_seats": 12
+      }
+    ]
+  }
+}

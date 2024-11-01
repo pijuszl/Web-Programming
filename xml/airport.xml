@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flight_schedule
+    xmlns="https://flight-schedule.com/schedule"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://flight-schedule.com/schedule schema.xsd">
+    <flight id="AA123">
+        <airlines id="A4224">Avion Express</airlines>
+        <departure_airport>
+            <airport>VNO</airport>
+            <departure_time>13:15</departure_time>
+        </departure_airport>
+        <arrival_airport>
+            <airport>LTN</airport>
+            <arrival_time>15:45</arrival_time>
+        </arrival_airport>
+        <flight_duration time="h">2.5</flight_duration>
+        <departure_date>2023-10-13</departure_date>
+        <aircraft>
+            <model>Boeing 747</model>
+            <capacity>400</capacity>
+        </aircraft>
+        <c:crew id="A4224" xmlns:c="https://flight-schedule.com/crew">
+            <c:pilot pilot_id="502314">
+                <c:first_name>Tomas</c:first_name>
+                <c:last_name>Laukunas</c:last_name>
+                <c:age>32</c:age>
+                <c:license_number>58478OL</c:license_number>
+                <c:description> I am <c:first_name>Tomas</c:first_name>
+                    <c:last_name>Laukunas</c:last_name>
+                    and I am <c:age>32</c:age>
+                </c:description>
+            </c:pilot>
+            <c:pilot pilot_id="566724">
+                <c:first_name>Lukas</c:first_name>
+                <c:last_name>Poliunas</c:last_name>
+                <c:age>26</c:age>
+                <c:license_number>78518MB</c:license_number>
+                <c:description> I am <c:first_name>Lukas</c:first_name>
+                    <c:last_name>Poliunas</c:last_name>
+                    and I am <c:age>26</c:age>
+                </c:description>
+            </c:pilot>
+        </c:crew>
+        <passengers>
+            <passenger>
+                <first_name>Gabriele</first_name>
+                <last_name>Kirlyte</last_name>
+                <age>18</age>
+                <passport_number>40507052284</passport_number>
+                <food_included>false</food_included>
+            </passenger>
+            <top_passenger>
+                <first_name>Jonas</first_name>
+                <last_name>Polivonas</last_name>
+                <age>71</age>
+                <passport_number>56112267413</passport_number>
+                <food_included>true</food_included>
+            </top_passenger>
+        </passengers>
+        <bought_seats>74 29</bought_seats>
+    </flight>
+    <flight id="BB444">
+        <airlines id="R3210">Ryanair</airlines>
+        <departure_airport>
+            <airport>WAW</airport>
+            <departure_time>09:48</departure_time>
+        </departure_airport>
+        <arrival_airport>
+            <airport>RIX</airport>
+            <arrival_time>11:00</arrival_time>
+        </arrival_airport>
+        <flight_duration time="h">1.2</flight_duration>
+        <departure_date>2023-11-02</departure_date>
+        <aircraft>
+            <model>Airbus A320</model>
+            <capacity>230</capacity>
+        </aircraft>
+        <c:crew id="R3210" xmlns:c="https://flight-schedule.com/crew">
+            <c:pilot pilot_id="911213">
+                <c:first_name>Valentina</c:first_name>
+                <c:last_name>Jankiene</c:last_name>
+                <c:age>46</c:age>
+                <c:license_number>55678HJ</c:license_number>
+                <c:description> I am <c:first_name>Valentina</c:first_name>
+                    <c:last_name>Jankiene</c:last_name>
+                    and I am <c:age>46</c:age>
+                </c:description>
+            </c:pilot>
+            <c:pilot pilot_id="561124">
+                <c:first_name>Karolis</c:first_name>
+                <c:last_name>Jukauskas</c:last_name>
+                <c:age>52</c:age>
+                <c:license_number>15488HJ</c:license_number>
+                <c:description> I am <c:first_name>Karolis</c:first_name>
+                    <c:last_name>Jukauskas</c:last_name>
+                    and I am <c:age>52</c:age>
+                </c:description>
+            </c:pilot>
+        </c:crew>
+        <passengers>
+            <top_passenger>
+                <first_name>Ruta</first_name>
+                <last_name>Kirilova</last_name>
+                <age>50</age>
+                <passport_number>47311190028</passport_number>
+                <food_included>true</food_included>
+            </top_passenger>
+        </passengers>
+        <bought_seats>12</bought_seats>
+    </flight>
+</flight_schedule>

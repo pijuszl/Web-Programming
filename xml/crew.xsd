@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns="https://flight-schedule.com/crew"
+    targetNamespace="https://flight-schedule.com/crew"
+    elementFormDefault="qualified">
+
+    <xs:element name="crew">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="pilot" minOccurs="2" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="id" type="airlines_id" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="pilot">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="employee">
+                    <xs:sequence>
+                        <xs:element ref="license_number" />
+                        <xs:element name="description" type="description_type" />
+                    </xs:sequence>
+                    <xs:attribute name="pilot_id" type="xs:string" use="required" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="employee">
+        <xs:sequence>
+            <xs:element name="first_name" type="xs:string" />
+            <xs:element name="last_name" type="xs:string" />
+            <xs:element name="age" type="xs:int" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="description_type" mixed="true">
+        <xs:sequence>
+            <xs:element name="first_name" type="xs:string" />
+            <xs:element name="last_name" type="xs:string" />
+            <xs:element name="age" type="xs:int" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="airlines_id">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]\d{4}" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:element name="license_number">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="\d{5}[A-Z][A-Z]" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+</xs:schema>

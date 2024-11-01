@@ -1,0 +1,199 @@
+/* Basic Styling */
+body {
+  font-family: "Arial", sans-serif;
+  color: #333;
+  background-image: url("main.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+header,
+nav,
+main,
+footer {
+  margin: 2%;
+  padding: 20px;
+  background: linear-gradient(
+    to right,
+    rgb(194, 248, 255),
+    rgba(255, 255, 255, 0.7)
+  );
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.submission {
+  color: limegreen;
+}
+
+main > p {
+  font-weight: bold;
+  font-size: x-large !important;
+}
+
+main p {
+  font-size: large;
+}
+
+header {
+  display: block;
+  text-align: center;
+}
+
+nav {
+  padding: 0px;
+  display: inline-block;
+  margin: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: whitesmoke;
+  padding: 8px 20px;
+  background-color: #333;
+  border-radius: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+  background-color: orangered;
+  color: inherit;
+}
+
+table,
+th,
+td {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+}
+
+.scrollable-table {
+  max-height: 200px;
+  max-width: 1000px;
+  overflow-y: scroll;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.unscrollable-table {
+  border-radius: 8px;
+  max-width: 800px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 800px) {
+  .unscrollable-table {
+    overflow: scroll;
+  }
+}
+
+.flight-logo {
+  max-width: 300px;
+  max-height: 200px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.staff-list {
+  font-size: medium;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+form {
+  margin-top: 20px;
+}
+
+form label,
+form input,
+form select {
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select {
+  padding: 10px;
+  width: 300px;
+  border-radius: 4px;
+  border: 1px solid black;
+}
+
+input[type="text"] {
+  background-color: white;
+}
+
+input[type="submit"] {
+  background-color: skyblue;
+  color: black;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+  background-color: orangered;
+}
+
+#details {
+  background-color: rgba(247, 247, 247, 0.9);
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+footer p {
+  font-size: large;
+  text-align: center;
+}
+footer a {
+  color: orangered;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: blue;
+}
+
+@keyframes slideCarousel {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.sliding-logos {
+  margin-top: 20px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.sliding-logos-inner {
+  gap: 50px;
+  margin-right: 50px;
+  display: flex;
+  animation: slideCarousel 15s linear infinite;
+}
+
+.sliding-logos-inner img {
+  height: 60px;
+  flex: 0 0 auto;
+  display: block;
+}

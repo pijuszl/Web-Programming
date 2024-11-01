@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flight Details</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Flight Schedule System</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="details">
+        <h1>Flight Details for AA123</h1>
+
+        <img src="logo5.png" alt="Avion Express" class="flight-logo"/>
+
+        <div class="unscrollable-table">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Airlines</th>
+                <th>Departure Airport</th>
+                <th>Arrival Airport</th>
+                <th colspan="2">Flight Duration</th>
+                <th>Departure Date</th>
+                <th>Left Seats</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>AA123</td>
+                <td>Avion Express</td>
+                <td>VNO</td>
+                <td>LTN</td>
+                <td>13:15</td>
+                <td>15:45</td>
+                <td>2023-11-28</td>
+                <td>398</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <ol class="staff-list">
+          <li>Pilots</li>
+          <ul>
+            <li>Valentina Jankiene</li>
+            <li>Karolis Jukauskas</li>
+          </ul>
+          <li>Flight attendants</li>
+          <ul>
+            <li>Miglė Jaukutė</li>
+            <li>Jonas Hukauskas</li>
+            <li>Marija Valentienė</li>
+          </ul>
+        </ol>
+
+        <form action="submit.html" method="post">
+          <label for="name">First Name:</label><br />
+          <input type="text" id="fname" name="name" required />
+          <br />
+          <label for="surname">Last Name:</label><br />
+          <input type="text" id="lname" name="surname" />
+          <br />
+
+          <label for="gender">Gender:</label>
+          <br>
+          <input type="radio" id="html" name="gender" value="Male">
+          <label for="male">Male</label>
+          <br>
+          <input type="radio" id="css" name="gender" value="Female">
+          <label for="female">Female</label>
+          <br>
+
+          <label for="email">Email:</label><br />
+          <input type="email" id="email" name="email" />
+          <br />
+          <label for="age">Age:</label><br />
+          <input type="number" id="age" name="age" min="1" max="120" />
+          <br/>
+          <label for="class">Preferred Class:</label>
+          <br />
+
+          <select id="class" name="class">
+            <option value="economy">Economy</option>
+            <option value="first">First</option>
+            <option value="business">Business</option>
+          </select>
+          <br />
+
+          <input type="submit" value="Submit" />
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>Copyright &copy; 2023 Flight Schedule</p>
+      <p><a href="about.html">About Us</a></p>
+    </footer>
+  </body>
+</html>
